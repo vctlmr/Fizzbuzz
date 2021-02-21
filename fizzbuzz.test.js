@@ -3,22 +3,16 @@ var fizzbuzz = require("./fizzbuzz")
 var array = [];
 var verifArray = [];
 for(var i = 1; i <= 100; i++) {
-    array[i] = i;
+    array[i-1] = i;
     if (i % 3 == 0 && i % 5 > 0)
-        verifArray[i] = "Fizz"
+        verifArray[i-1] = "Fizz"
     if (i % 5 == 0 && i % 3 > 0)
-        verifArray[i] = "Buzz"
+        verifArray[i-1] = "Buzz"
     if (i % 5 == 0 && i % 3 == 0)
-        verifArray[i] = "FizzBuzz"
+        verifArray[i-1] = "FizzBuzz"
     if (i % 5 > 0 && i % 3 > 0)
-        verifArray[i] = i;
+        verifArray[i-1] = i;
 }
-
-
-
-console.log(array);
-console.log(verifArray);
-
 
 test('should return an array with the same value than the solution', () => {
     expect(fizzbuzz(array)).toEqual(verifArray);
